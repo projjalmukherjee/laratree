@@ -18,6 +18,7 @@ class CreateCategoryTable extends Migration
             $table->string('title');
             $table->bigInteger('parent_id')->unsigned();
             $table->timestamps();
+            $table->unique(['title', 'parent_id']);
             //$table->foreign('parent_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }

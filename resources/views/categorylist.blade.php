@@ -36,10 +36,15 @@
                                     <td>{{ $category->title }}</td>
                                     <td> @if($category->parent_id != 0) {{ $category->parent->title }}  @endif</td>
                                     <td>
-                                        <a href="#" class="btn btn-primary" role="button" aria-pressed="true">Edit</a>
+                                        <a href="{{ route('edit-category',[$category->id]) }}" class="btn btn-primary" role="button" aria-pressed="true">Edit</a>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-primary" role="button" aria-pressed="true">Delete</a> 
+                                       {{--  <a href="#" class="btn btn-primary" role="button" aria-pressed="true">Delete</a> --}} 
+                                        <form action="{{ route('delete-category',[$category->id])}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger" type="submit">Delete</button>
+                                        </form>
                                     </td>
                                   </tr>
                                      @endforeach
