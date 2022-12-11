@@ -1,6 +1,8 @@
-#step1 :: clone from remote
+#step1 :: clone from remote 
 
-#step2 :: composer install
+#step2 :: run command for install the vendor in cmd
+
+composer install
 
 #step3 :: run the command in command line interface 
 
